@@ -254,3 +254,98 @@ footer{
   display: block;
   text-align: center;
 }
+
+/* ------------------------------------------------------------------------ */
+
+/* post.html */
+
+.table-head{
+  display: flex;
+}
+
+.table-head div{
+  padding: 5px;
+  margin: 2px;
+  background-color: #777;
+  font-weight: bold;
+}
+
+.table-head .status{
+  flex: 5%;
+}
+
+.table-head .subject{
+  flex: 70%;
+}
+
+.table-head .replies{
+  flex: 10%;
+}
+
+.table-head .last-reply{
+  flex: 15%;
+}
+
+/* table displaying */
+.table-row{
+  display: flex;
+}
+
+.table-row div{
+  padding: 5px;
+  margin: 2px;
+  background-color: #131415;
+}
+
+.table-row .status{
+  flex: 5%;
+  font-size: 10px;
+  text-align: center;
+}
+
+.table-row .subject{
+  flex: 70%;
+}
+
+.table-row .replies{
+  flex: 10%;
+}
+
+.table-row .last-reply{
+  flex: 15%;
+}
+
+/* pagination */
+
+.pagination{
+  padding: 20px;
+  font-size: 15px;
+}
+
+.pagination a{
+  color: #fff;
+  margin-inline: 5px;
+  padding: 5px 10px;
+  border: solid 0.5px #fff;
+}
+
+.pagination a:hover{
+  opacity: 0.5;
+}
+
+/* Navigate */
+
+.navigate{
+  margin-block: 20px;
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+.navigate a{
+  color: #fff;
+}
+
+.navigate a:hover{
+  color: #f00;
+  font-weight: bolder;
+}
