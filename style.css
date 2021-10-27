@@ -12,7 +12,7 @@ html{
 }
 
 a{
-  color: #00FF00;
+  color: #fbb;
   font-weight: bolder;
   text-decoration: none;
 }
@@ -53,7 +53,7 @@ h1{
   padding: 10px;
   margin: 4px;
   border-radius: 5px;
-  background-color: aqua;
+  background-color: #888;
 }
 
 .center{
@@ -64,6 +64,10 @@ h1{
 
 .subboard-icon{
   font-size: 40px;
+}
+
+.subboard-status{
+  font-size: 12px;
 }
 
 /* Damn phones */
@@ -232,3 +236,21 @@ header{
   box-shadow: #fff;
 }
 
+/* search box for damn phones */
+
+@media screen and (max-width: 460px){
+  .search-box input, .search-box select, .search-box button{
+    min-width: 300px;
+    margin-top: 5px;
+  }
+}
+
+/* footer */
+
+footer{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #52057b;
+  display: block;
+  text-align: center;
+}
