@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrashBoard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <nav class="navigation hide" id="navigation">
+        <ul class="nav-list">
+          <span class="close-icon" onclick="showIconBar()"><i>close</i></span>
+          <li class="nav-item">
+            <a href="#"> Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#"> Board</a>
+          </li>
+          <li class="nav-item">
+            <a href="#"> What</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i>open</i></a>
+      <div class="brand">My Board</div>
+    </div>
+    <div class="search-box">
+      <div>
+        <select name="" id="" disabled="disabled">
+          <option value="everything"> Everything </option>
+        </select>
+        <input type="text" name="idk" id="" placeholder="search">
+        <button><i>search</i></button>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <!--Navigate-->
+    <div class="navigate">
+      <span><a href="#">My Board - Boards</a> >> <a href="#">Esam Topic</a> >> <a href="#">Esam Post</a></span>
+    </div>
+    <div class="topic-container">
+      <div class="head">
+        <div class="author">
+          Author
+        </div>
+        <div class="content">
+          Topic: title (Viewed xxx times)
+        </div>
+      </div>
+      <div class="body">
+        <div class="author">
+          <div class="username"><a href="#">Name</a></div>
+          <div> ??? </div>
+          <img src="IMG_4143.PNG">
+          <div>Stats: <u>6xx9</u></div>
+        </div>
+        <div class="content">
+          Ok I pull up hop out at the after party
+          <br><br>
+          <hr>
+          <div class="reply">
+            <button onclick="showReplyBox()">Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Reply Input-->
+    <div class="reply-area hide" id="reply-area">
+      <textarea name="reply" id="" placeholder="reply"></textarea>
+      <input type="submit" name="" id="" value="reply">
+    </div>
+  </div>
+
+
+
+  <footer>
+    <span>&copy; &nbsp; FuckBoard Writer | All Rights Expunged</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

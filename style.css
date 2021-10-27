@@ -22,7 +22,7 @@ h1{
   font-weight: bolder;
 }
 
-/* board.html */
+/* home.html */
 
 .container{
   margin: 20px;
@@ -257,7 +257,7 @@ footer{
 
 /* ------------------------------------------------------------------------ */
 
-/* post.html */
+/* board.html */
 
 .table-head{
   display: flex;
@@ -348,4 +348,72 @@ footer{
 .navigate a:hover{
   color: #f00;
   font-weight: bolder;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* post.html */
+
+.topic-container .head{
+  display: flex;
+  background-color: #2c2c2c;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.author{
+  flex: 20%;
+}
+
+.content{
+  flex: 80%;
+}
+
+.body{
+  display: flex;
+  background-color: #131415;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.body .author .username{
+  font-size: 20px;
+}
+
+.body .author img{
+  max-width: 100px;
+  max-height: 160px;
+}
+
+.body .content .reply button{
+  border: none;
+  padding: 10px;
+  font-weight: bolder;
+  box-shadow: 4px 6px #fff;
+  cursor: pointer;
+  float: right;
+}
+
+/* rpely */
+.reply-area{
+  margin-top: 50px;
+}
+
+.reply-area textarea{
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  margin-block: 10px;
+}
+
+.reply-area input{
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.reply-area input:hover{
+  border: solid apx #000;
 }
