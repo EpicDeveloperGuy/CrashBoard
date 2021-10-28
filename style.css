@@ -354,7 +354,7 @@ footer{
 
 /* post.html */
 
-.topic-container .head{
+.head{
   display: flex;
   background-color: #2c2c2c;
   padding: 5px;
@@ -386,7 +386,7 @@ footer{
   max-height: 160px;
 }
 
-.body .content .reply button{
+.body .content .comment button,.body .content .reply button{
   border: none;
   padding: 10px;
   font-weight: bolder;
@@ -395,25 +395,29 @@ footer{
   float: right;
 }
 
-/* rpely */
-.reply-area{
+/* comment */
+.comment-area, .reply-area{
   margin-top: 50px;
 }
 
-.reply-area textarea{
+.comment-area textarea, .reply-area textarea{
   width: 100%;
   min-height: 100px;
   padding: 10px;
   margin-block: 10px;
 }
 
-.reply-area input{
+.comment-area input, .reply-area input{
   float: right;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.reply-area input:hover{
+.comment-area input:hover, .reply-area input:hover{
   border: solid apx #000;
+}
+
+.reply-container{
+  margin-top: 30px;
 }

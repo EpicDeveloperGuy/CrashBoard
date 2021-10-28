@@ -12,7 +12,18 @@ function showIconBar() {
   navigation.classList.add("hide")
 }
 
+function showCommentBox() {
+  let commentArea = document.getElementById("comment-area");
+  if (commentArea.style.display === "none")
+    commentArea.setAttribute("style", "display:block");
+  else
+    commentArea.setAttribute("style", "display:none");
+}
+
 function showReplyBox() {
   let replyArea = document.getElementById("reply-area");
-  replyArea.setAttribute("style", "display:block");
+  if (replyArea.style.display === "none")
+    replyArea.setAttribute("style", "display:block");
+  else
+    replyArea.setAttribute("style", "display:none");
 }
