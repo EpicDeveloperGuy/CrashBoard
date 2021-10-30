@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CrashBoard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <header>
-    <div class="navbar">
-      <nav class="navigation hide" id="navigation">
-        <ul class="nav-list">
-          <span class="close-icon" onclick="showIconBar()"><i>close</i></span>
-          <li class="nav-item">
-            <a href="#"> Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#"> Board</a>
-          </li>
-          <li class="nav-item">
-            <a href="#"> What</a>
-          </li>
-        </ul>
-      </nav>
-      <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i>open</i></a>
-      <div class="brand">CrashBoard</div>
-    </div>
-    <div class="search-box">
-      <div>
-        <select name="" id="" disabled="disabled">
-          <option value="everything"> Everything </option>
-        </select>
-        <input type="text" name="idk" id="" placeholder="search">
-        <button><i>search</i></button>
-      </div>
-    </div>
-  </header>
+{% block content %}
   <div class="container">
     <!--Navigate-->
     <div class="navigate">
@@ -82,14 +45,4 @@
       pages: <a href="#">1</a><a href="#">2</a><a href="#">3</a>
     </div>
   </div>
-
-
-
-  <footer>
-    <span>&copy; &nbsp; FuckBoard Writer | All Rights Expunged</span>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
-
-</html>
+{% endblock content %}
