@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include("main.urls")),
     path('tinymce/', include("tinymce.urls")),
     path('hitcount/', include('hitcount.urls', namespace='hitcount')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

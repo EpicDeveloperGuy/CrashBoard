@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load hitcount_tags %}
 {% block content %}
   <div class="container">
     <!--Navigate-->
@@ -21,17 +21,18 @@
           Lst Reply
         </div>
       </div>
+      {% for post in posts %}
       <div class="table-row">
         <div class="status">
           <i>What</i>
         </div>
         <div class="subject">
-          <a href="#">Is fucking worth?</a>
+          <a href="{{post.get_url}}">{{post.title}}</a>
           <br>
-          <span>Started by <b><a href="#">Boarder</a></b></span>
+          <span>Started by <b><a href="#">{{post.user.fullname|title}}</a></b></span>
         </div>
         <div class="replies">
-          2 replies <br>125 viwes
+          2 replies <br> {% get_hit_count for post %}viwes
         </div>
         <div class="last-reply">
           Dec 31, 2069
@@ -39,6 +40,7 @@
           By <b><a href="#">Esam</a></b>
         </div>
       </div>
+      {% endfor %}
     </div>
     <!--Pagination-->
     <div class="pagination">

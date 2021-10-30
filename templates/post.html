@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-
+{% load hitcount_tags %}
 {% block content %}
   <div class="container">
     <!--Navigate-->
     <div class="navigate">
-      <span><a href="#">My Board - Boards</a> >> <a href="#">Esam Topic</a> >> <a href="#">Esam Post</a></span>
+      <span><a href="#">My Board - Boards</a> >> <a href="#">Esam Topic</a> >> <a href="{{post.get_url}}">{{post.title}}</a></span>
     </div>
     <div class="topic-container">
       <div class="head">
@@ -12,18 +12,18 @@
           Author
         </div>
         <div class="content">
-          Topic: title (Viewed xxx times)
+          Topic: {{post.title}} (Viewed {% get_hit_count for post %} times)
         </div>
       </div>
       <div class="body">
         <div class="author">
-          <div class="username"><a href="#">Name</a></div>
+          <div class="username"><a href="#">{{post.user.fullname|title}}</a></div>
           <div> ??? </div>
-          <img src="IMG_4143.PNG">
+          <img src="{{post.user.profile_pic.url}}">
           <div>Stats: <u>6xx9</u></div>
         </div>
         <div class="content">
-          Ok I pull up hop out at the after party
+          {{post.content|safe}}
           <br><br>
           <hr>
           <div class="comment">
