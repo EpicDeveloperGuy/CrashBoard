@@ -17,7 +17,8 @@ def board(request, slug):
     category = get_object_or_404(Category, slug=slug)
     posts = Post.objects.filter(approved=True, categories=category)
     context = {
-        "posts": posts
+        "posts": posts,
+        "category": category
     }
     return render(request, "board.html", context)
 

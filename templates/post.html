@@ -4,7 +4,7 @@
   <div class="container">
     <!--Navigate-->
     <div class="navigate">
-      <span><a href="#">My Board - Boards</a> >> <a href="#">Esam Topic</a> >> <a href="{{post.get_url}}">{{post.title}}</a></span>
+      <span><a href="{% url 'home' %}">My Board - Boards</a> >> <a href="{{post.categories.all.0.get_url}}">{{post.categories.all.0}}</a> >> <a href="{{post.get_url}}">{{post.title}}</a></span>
     </div>
     <div class="topic-container">
       <div class="head">
@@ -20,7 +20,8 @@
           <div class="username"><a href="#">{{post.user.fullname|title}}</a></div>
           <div> ??? </div>
           <img src="{{post.user.profile_pic.url}}">
-          <div>Stats: <u>6xx9</u></div>
+          <div>Posts: <u>{{reply.user.num_posts}}</u></div>
+          <div>Stats: <u>{{post.user.points}}</u></div>
         </div>
         <div class="content">
           {{post.content|safe}}
@@ -39,38 +40,50 @@
       <input type="submit" name="" id="" value="comment">
     </div>
 
-    <!--Show Reply-->
-    <div class="reply-container">
-      <div class="head">
-        <div class="author">
-          Author
-        </div>
-        <div class="content">
-          Topic: title (Viewed xxx times)
-        </div>
-      </div>
-      <div class="body">
-        <div class="author">
-          <div class="authorusername"><a href="#">Name</a></div>
-          <div> ??? </div>
-          <img src="IMG_4143.PNG">
-          <div>Stats: <u>6xx9</u></div>
-        </div>
-        <div class="content">
-          You and all your friends yeah they love to get naughty
-          <br><br>
-          <hr>
-          <div class="reply">
-            <button onclick="showReplyBox()">Reply</button>
+    <!--Show Comment-->
+    {% for comment in post.comments.all %}
+      <div class="reply-container">
+        <div class="body">
+          <div class="author">
+            <div class="authorusername"><a href="#">{{comment.user.fullname|title}}</a></div>
+            <div> ??? </div>
+            <img src="{{comment.user.profile_pic.url}}">
+            <div>Posts: <u>{{comment.user.num_posts}}</u></div>
+            <div>Stats: <u>{{comment.user.points}}</u></div>
+          </div>
+          <div class="content">
+            {{comment.content}}
+            <br><br>
+            <hr>
+            <div class="reply">
+              <button onclick="showReplyBox()">Reply</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!--Reply Input-->
-    <div class="reply-area hide" id="reply-area">
-      <textarea name="reply" id="" placeholder="reply"></textarea>
-      <input type="submit" name="" id="" value="reply">
-    </div>
+      <!--Reply Input-->
+      <div class="reply-area hide" id="reply-area">
+        <textarea name="reply" id="" placeholder="reply"></textarea>
+        <input type="submit" name="" id="" value="reply">
+      </div>
+      <!--Show Reply-->
+      {% for reply in comment.replies.all %}
+      <div class="reply-container" style="width: 95%; margin-left:5%">
+        <div class="body">
+          <div class="author">
+            <div class="authorusername"><a href="#">{{reply.user.fullname|title}}</a></div>
+            <div> ??? </div>
+            <img src="{{reply.user.profile_pic.url}}">
+            <div>Posts: <u>{{reply.user.num_posts}}</u></div>
+            <div>Stats: <u>{{reply.user.points}}</u></div>
+          </div>
+          <div class="content">
+            {{reply.content}}
+            <br>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endfor %}
   </div>
 {% endblock content %}
