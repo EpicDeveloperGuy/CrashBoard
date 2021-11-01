@@ -4,7 +4,7 @@
   <div class="container">
     <!--Navigate-->
     <div class="navigate">
-      <span><a href="{% url 'home' %}">My Board - Boards</a> >> <a href="{{category.get_url}}">{{category.title}}</a></span>
+      <span>Search Result: {{query}} >> {{objects|length}} Result(s) Found </span>
     </div>
     <div class="post-table">
       <div class="table-head">
@@ -21,7 +21,7 @@
           Lst Reply
         </div>
       </div>
-      {% for post in posts %}
+      {% for post in objects %}
       <div class="table-row">
         <div class="status">
           <i>What</i>

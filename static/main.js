@@ -20,8 +20,8 @@ function showCommentBox() {
     commentArea.setAttribute("style", "display:none");
 }
 
-function showReplyBox() {
-  let replyArea = document.getElementById("reply-area");
+function showReplyBox(id) {
+  let replyArea = document.getElementById(id);
   if (replyArea.style.display === "none")
     replyArea.setAttribute("style", "display:block");
   else

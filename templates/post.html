@@ -35,11 +35,13 @@
     </div>
 
     <!--Comment Input-->
-    <div class="comment-area hide" id="comment-area">
-      <textarea name="comment" id="" placeholder="comment"></textarea>
-      <input type="submit" name="" id="" value="comment">
-    </div>
-
+    <form action="." method='post'>
+      {% csrf_token %}
+      <div class="comment-area hide" id="comment-area">
+        <textarea name="comment" placeholder="comment"></textarea>
+        <input type="submit" name="comment-form" value="comment">
+      </div>
+    </form>
     <!--Show Comment-->
     {% for comment in post.comments.all %}
       <div class="reply-container">
@@ -56,16 +58,20 @@
             <br><br>
             <hr>
             <div class="reply">
-              <button onclick="showReplyBox()">Reply</button>
+              <button onclick="showReplyBox('{{comment.id}}')">Reply</button>
             </div>
           </div>
         </div>
       </div>
       <!--Reply Input-->
-      <div class="reply-area hide" id="reply-area">
-        <textarea name="reply" id="" placeholder="reply"></textarea>
-        <input type="submit" name="" id="" value="reply">
-      </div>
+      <form action='.' method='post'>
+      {% csrf_token %}
+        <div class="reply-area hide" id="{{comment.id}}">
+          <textarea name="reply" placeholder="reply"></textarea>
+          <input type="submit" name="reply-form" value="reply">
+          <input type="hidden" name="comment_id" value="{{comment.id}}">
+        </div>
+      </form>
       <!--Show Reply-->
       {% for reply in comment.replies.all %}
       <div class="reply-container" style="width: 95%; margin-left:5%">
