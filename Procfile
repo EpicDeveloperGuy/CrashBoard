@@ -1,0 +1,1 @@
+web: gunicorn crashboard.wsgi:application --log-file -
